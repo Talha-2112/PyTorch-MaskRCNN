@@ -9,9 +9,10 @@ This repo contains a single Python file `Model.py` for training and validating M
 - Hyperparameters are defined at the top of the code for easy customization
 - Custom backbone support (default: ConvNeXt-base with FPN)
 - Single-file, easy to import and use
-- Custom dataset handling via `CustomDataset`
+- Custom dataset handling via class `CustomDataset`
 - Supports checkpointing, logging, and mixed-precision training
 - Calculates **training loss**, **validation loss**, **mAP**, **mAP@50**, and **IoU** metrics
+- Required libraries are provided in the requirements.txt file
 
 ---
 
