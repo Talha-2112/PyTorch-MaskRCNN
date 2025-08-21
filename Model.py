@@ -1,11 +1,10 @@
 # Be sure to modify the Metadatas and CustomDataset class to match your dataset annotation format.
 
-#METADATAS
+#METADATA
 BATCHSIZE = 1
 NUM_CLASSES = 2 
 EPOCH_NUM = 100
 SHUFFLE = True
-EPOCH = 100
 LR = 0.0001 
 DECAY = 0.0005 
 CONTINUE = False # If its not True the model wont continue from checkpoint
