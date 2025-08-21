@@ -130,8 +130,7 @@ class Model():
   ...
   Each line in the annotation file corresponds to one object instance for a given image_id.
 
-    """
-    def __init__(self, 
+    """    def __init__(self, 
                  device="cuda",
                  optimizer=None,
                  train_path="./train", 
@@ -139,7 +138,7 @@ class Model():
         
         self.device = device
         (self.trainset, self.validset) = self._prepareDataset(train_path, val_path)
-        self._model = self.createModel()
+        self.createModel()
 
         if optimizer is None:
             self.optimizer = torch.optim.Adam(self._model.parameters(), lr=LR, weight_decay=DECAY)
@@ -200,7 +199,7 @@ class Model():
 
         model = MaskRCNN(backbone, num_classes=num_classes)
 
-        return model
+        self._model = model
 
 
     def _calculate_iou(self, outputs, targets):
