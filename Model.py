@@ -30,8 +30,7 @@ from torch.amp import autocast, GradScaler
 
 
 
-class Model():
-    """
+class Model():    """
     Model class for training and validating a Mask R-CNN model with a custom backbone and dataset.
     The Model initializes with ConvNeXt-base as the backbone and MaskRCNN as the model. You may customize the Model by your choice.
     The optimizer also initializes as AdamW but can be changed to any other optimizer.
@@ -62,13 +61,13 @@ class Model():
 
     Methods:
         __init__(self, device="cuda", optimizer=None, train_path="./train", val_path="./valid"):
-            Initializes the Model, prepares datasets, creates the model, and sets up the optimizer.
+            Initializes the Model, prepares datasets, creates the model, and sets up the optimizer. 
 
         _prepareDataset(self, train_path, val_path):
             Loads annotations, applies transforms, and returns DataLoaders for training and validation.
 
         createModel(self, num_classes=NUM_CLASSES, featExtr=..., return_layers=..., in_channels_list=..., out_channels=256):
-            Creates and returns a Mask R-CNN model with a custom backbone and FPN.
+            Creates and returns a Mask R-CNN model with a custom backbone and FPN. To modify the model, you can call the createModel() function with the required parameters.
 
         _calculate_iou(self, outputs, targets):
             Calculates the Intersection over Union (IoU) matrix between predicted and target bounding boxes.
@@ -128,9 +127,10 @@ class Model():
     ]
   },
   ...
-  Each line in the annotation file corresponds to one object instance for a given image_id.
+  Each line in the annotation file corresponds to one object instance at the given image_id.
 
-    """    def __init__(self, 
+    """
+    def __init__(self, 
                  device="cuda",
                  optimizer=None,
                  train_path="./train", 
